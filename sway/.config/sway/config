@@ -51,6 +51,7 @@ client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
+hide_edge_borders smart
 default_border pixel 1 # Disable window titlebar
 
 include /etc/sway/config-vars.d/*
