@@ -34,6 +34,7 @@
   color: @text;
   font-family: Hack Nerd Font Mono;
   font-size: 14px;
+  border-radius: 0;
 }
 
 #waybar {
@@ -41,11 +42,10 @@
   border: 2px solid alpha(@crust, 0.3);
 }
 
-#workspaces {
-  font-size: 20px;
-}
 
-
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
 #workspaces button.visible {
   background-color: @surface1;
 }
@@ -53,12 +53,6 @@
 #workspaces button.persistent {
   background-color: red;
 }
-
-
-
-/* -----------------------------------------------------------------------------
- * Module styles
- * -------------------------------------------------------------------------- */
 
 #battery {
     animation-timing-function: linear;
@@ -86,6 +80,7 @@
 
 #clock {
     font-weight: bold;
+    padding-right: 10px;
 }
 
 

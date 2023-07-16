@@ -17,5 +17,5 @@ def playerctl(*arguments):
 
 for instance in playerctl("--list-all").splitlines():
     if playerctl("-p", instance, "status").strip().lower() == "playing":
-        print(playerctl("-p", instance, "metadata", "--format", '{{ title }} - {{artist }} ').strip())
+        print(playerctl("-p", instance, "metadata", "--format", '{{ title }} - {{artist }} ').strip())
 
