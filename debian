@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+apt update
+
+# Install basic
+apt install --assume-yes \
+ sudo\
+ stow\

@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+mkdir -p \
+  ~/.config \
+  ~/Documents \
+  ~/Downloads \
+  ~/Music \
+  ~/Pictures \
+  ~/Videos
+
+stow bin
+stow sway
+stow waybar
+stow user-dirs
+stow fonts
+stow alacritty
+stow applications

@@ -1,0 +1,17 @@
+[Desktop Entry]
+Version=1.0
+Name=Youtube Music
+Exec=flatpak run org.mozilla.firefox -p youtube-music -url https://music.youtube.com --class=youtube-music --no-remote
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=~/.local/share/icons/youtube-music.png
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=youtube-music
+StartupNotify=true
+X-WebApp-Browser=Firefox
+X-WebApp-URL=https://music.youtube.com
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true
