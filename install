@@ -1,4 +1,14 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+STOW_FOLDERS=(
+    alacritty
+    applications
+    bin
+    fonts
+    sway
+    user-dirs
+    waybar
+)
+
 
 mkdir -p \
   ~/.config \
@@ -8,10 +18,9 @@ mkdir -p \
   ~/Pictures \
   ~/Videos
 
-stow alacritty
-stow applications
-stow bin
-stow fonts
-stow sway
-stow user-dirs
-stow waybar
+
+for folder in "${STOW_FOLDERS[@]}"
+do
+  echo "stow $folder"
+  stow $folder
+done

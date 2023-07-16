@@ -39,3 +39,5 @@ chrome_path = profile_path / "chrome"
 chrome_path.mkdir(exist_ok=True)
 with open(chrome_path / "userChrome.css", "w") as file:
 	file.write("#nav-bar, #identity-box, #tabbrowser-tabs, #TabsToolbar {\n  visibility: collapse !important;\n}")
+
+print("Firefox profile youtube-music created")

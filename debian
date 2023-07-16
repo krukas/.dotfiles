@@ -1,8 +1,63 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-apt update
+APT_PACKAGES=(
+	# Basic
+	sudo
+	stow
+	flatpak
+	# SwayWM
+	sway
+	waybar
+	swaylock
+	sway-notification-center
+	network-manager
+	fuzzel
+	pulseaudio-utils
+	playerctl
+	xwayland
+	xdg-desktop-portal-wlr # Screen recording
+	xdg-desktop-portal-gtk # Flatpak integrations like file laucher
+	xdg-user-dirs
+	# Utils
+	git
+	wget
+	curl
+	exa
+	# Applications
+	thunar
+	thunar-archive-plugin
+	thunar-volman
+	pavucontrol
+	alacritty
+	keepassxc
+	meld
+	gimp
+)
 
-# Install basic
-apt install --assume-yes \
- sudo\
- stow\
+FLATPAK_PACKAGES=(
+	org.mozilla.firefox
+	org.chromium.Chromium
+	com.sublimetext.three
+	com.jetbrains.PyCharm-Professional
+	io.dbeaver.DBeaverCommunity
+	com.slack.Slack
+)
+
+
+sudo apt update
+sudo apt install --assume-yes ${APT_PACKAGES[@]}
+
+
+# Flatpak
+flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install -y --user flathub ${FLATPAK_PACKAGES[@]}
+
+
+# Install ly display manager
+# TODO: https://github.com/fairyglade/ly
+
+# Finisch youtube music setup
+./bin/.local/scripts/create-firefox-youtube-music-profile
+
+# Symlink dot files
+./install
