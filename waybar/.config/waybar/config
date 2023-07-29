@@ -22,6 +22,7 @@
         "temperature",
         "battery",
         "tray",
+        "custom/notification",
         "clock",
     ],
 
@@ -107,6 +108,26 @@
     "tray":{
         "icon-size":21,
         "spacing":10
+    },
+    "custom/notification":{
+        "tooltip":false,
+        "format":"{icon}",
+        "format-icons":{
+            "notification":"<span size='x-large'></span><span foreground='red'><sup></sup></span>",
+            "none":"<span size='x-large'></span>",
+            "dnd-notification":"<span size='x-large'></span><span foreground='red'><sup></sup></span>",
+            "dnd-none":"<span size='x-large'></span>",
+            "inhibited-notification":"<span size='x-large'></span><span foreground='red'><sup></sup></span>",
+            "inhibited-none":"<span size='x-large'></span>",
+            "dnd-inhibited-notification":"<span size='x-large'></span><span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none":"<span size='x-large'></span>"
+        },
+        "return-type":"json",
+        "exec-if":"which swaync-client",
+        "exec":"swaync-client -swb",
+        "on-click":"swaync-client -t -sw",
+        "on-click-right":"swaync-client -d -sw",
+        "escape":true
     },
     "clock":{
         "timezone":"Europe/Amsterdam",

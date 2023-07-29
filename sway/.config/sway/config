@@ -212,12 +212,24 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
+# Toggle control centerN
+bindsym $mod+Shift+n exec swaync-client -t -sw
+
 
 #
 # Status Bar:
 bar swaybar_command waybar
 
+
+###############################################################################
 # Start background apps
+###############################################################################
+
+# playerctld (Display and control current running music/video player)
 exec playerctld daemon
+
+# Sway notification center
+exec swaync
+
 
 include /etc/sway/config.d/*
