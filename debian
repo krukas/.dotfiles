@@ -27,8 +27,10 @@ APT_PACKAGES=(
 	git
 	wget
 	curl
+	gnupg
 	exa
 	htop
+	ca-certificates
 	# Applications
 	thunar
 	thunar-archive-plugin
@@ -57,6 +59,19 @@ sudo apt install --assume-yes ${APT_PACKAGES[@]}
 # Flatpak
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install -y --user flathub ${FLATPAK_PACKAGES[@]}
+
+
+# Docker
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install --assume-yes docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo usermod -aG docker $USER
 
 
 # Install ly display manager
