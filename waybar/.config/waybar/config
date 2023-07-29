@@ -14,7 +14,7 @@
         "sway/window",
     ],
     "modules-right":[
-        "custom/mediaplayer",
+        "custom/youtube-music",
         "pulseaudio",
         "network",
         "cpu",
@@ -37,9 +37,10 @@
     "sway/mode":{
         "format":"<span style=\"italic\">{}</span>"
     },
-    "custom/mediaplayer":{
+    "custom/youtube-music":{
         "interval":5,
-        "exec":"$HOME/.config/waybar/custom_modules/mediaplayer.py"
+        "exec":"$HOME/.config/waybar/custom_modules/youtube-music.py waybar",
+        "on-click":"$HOME/.config/waybar/custom_modules/youtube-music.py toggle"
     },
     "pulseaudio":{
         "format":"{volume}% <span size='xx-large' rise='-3500'>{icon}</span> {format_source}",
