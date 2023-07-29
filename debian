@@ -17,6 +17,8 @@ APT_PACKAGES=(
 	playerctl
 	grim
 	slurp
+	imv
+	mpv
 	xwayland
 	xdg-desktop-portal-wlr # Screen recording
 	xdg-desktop-portal-gtk # Flatpak integrations like file laucher

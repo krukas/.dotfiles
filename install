@@ -4,6 +4,7 @@ STOW_FOLDERS=(
     applications
     bin
     fonts
+    mpv
     sway
     swaylock
     swaync
