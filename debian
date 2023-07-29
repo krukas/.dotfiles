@@ -23,6 +23,7 @@ APT_PACKAGES=(
 	wget
 	curl
 	exa
+	htop
 	# Applications
 	thunar
 	thunar-archive-plugin
