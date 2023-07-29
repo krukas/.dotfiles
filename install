@@ -5,6 +5,7 @@ STOW_FOLDERS=(
     bin
     fonts
     sway
+    swaync
     user-dirs
     waybar
 )
