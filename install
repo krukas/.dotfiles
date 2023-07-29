@@ -9,6 +9,7 @@ STOW_FOLDERS=(
     swaync
     user-dirs
     waybar
+    wofi
 )
 
 

@@ -7,11 +7,12 @@ APT_PACKAGES=(
 	flatpak
 	# SwayWM
 	sway
+	swaybg
 	waybar
 	swaylock
 	sway-notification-center
 	network-manager
-	fuzzel
+	wofi
 	pulseaudio-utils
 	playerctl
 	xwayland

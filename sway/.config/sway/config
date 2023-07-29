@@ -43,12 +43,12 @@ set $base      #1e1e2e
 set $mantle    #181825
 set $crust     #11111b
 
-# target                 title     bg    text   indicator  border
-client.focused           $pink     $base $text  $rosewater $pink
-client.focused_inactive  $mauve    $base $text  $rosewater $mauve
-client.unfocused         $mauve    $base $text  $rosewater $mauve
-client.urgent            $peach    $base $peach $overlay0  $peach
-client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+# target                 title      bg    text   indicator  border
+client.focused           $lavender  $base $text  $sky       $lavender
+client.focused_inactive  $overlay0  $base $text  $sky       $overlay0
+client.unfocused         $overlay0  $base $text  $sky       $overlay0
+client.urgent            $peach     $base $peach $overlay0  $peach
+client.placeholder       $overlay0  $base $text  $overlay0  $overlay0
 client.background        $base
 
 hide_edge_borders smart
@@ -78,7 +78,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec fuzzel
+    bindsym $mod+d exec wofi --show drun
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -217,6 +217,9 @@ bindsym $mod+Shift+n exec swaync-client -t -sw
 
 # Lock screen
 bindsym Control+Alt+l exec swaylock
+
+# Wofi powermenu
+bindsym Control+Alt+Backspace exec ~/.local/scripts/wofi-powermenu
 
 
 #
