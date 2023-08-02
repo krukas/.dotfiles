@@ -30,6 +30,7 @@ APT_PACKAGES=(
 	gnupg
 	exa
 	htop
+	fzf
 	ca-certificates
 	# Applications
 	thunar
