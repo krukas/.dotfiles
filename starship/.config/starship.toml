@@ -1,0 +1,29 @@
+add_newline =  false
+
+[time]
+format = '[$time]($style)'
+style = 'white'
+disabled = true
+
+
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+truncation_symbol = ".../"
+
+[git_commit]
+commit_hash_length = 6
+tag_disabled = false
+
+[git_status]
+disabled = true
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+version_format = '${major}.${minor}'
+symbol = ' '
+
+[nodejs]
+format = '[$symbol($version )]($style)'
+version_format = 'v${major}'
+symbol = ' '

@@ -23,6 +23,7 @@ APT_PACKAGES=(
 	xdg-desktop-portal-gtk # Flatpak integrations like file laucher
 	xdg-user-dirs
 	# Utils
+	zsh
 	git
 	wget
 	curl
@@ -82,6 +83,17 @@ git clone --recurse-submodules https://github.com/fairyglade/ly /tmp/fly
 )
 sudo systemctl enable ly.service
 rm -rf /tmp/fly
+
+# Make ZSH the default
+sudo chsh -s $(which zsh) $USER
+
+# Install oh-my-zsh
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+
+# Install starship
+wget --quiet --output-document=/tmp/starship.tar.gz https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-musl.tar.gz
+sudo tar -xzof /tmp/starship.tar.gz -C /usr/local/bin
+rm /tmp/starship.tar.gz
 
 # Finisch youtube music setup
 ./bin/.local/scripts/create-firefox-youtube-music-profile

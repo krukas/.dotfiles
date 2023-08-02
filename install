@@ -5,12 +5,14 @@ STOW_FOLDERS=(
     bin
     fonts
     mpv
+    starship
     sway
     swaylock
     swaync
     user-dirs
     waybar
     wofi
+    zsh
 )
 
 
