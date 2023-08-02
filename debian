@@ -95,6 +95,12 @@ wget --quiet --output-document=/tmp/starship.tar.gz https://github.com/starship/
 sudo tar -xzof /tmp/starship.tar.gz -C /usr/local/bin
 rm /tmp/starship.tar.gz
 
+# Setup git config
+git config --global core.editor "nano -w"
+git config --global fetch.prune true
+git config --global pull.rebase true
+git config --global push.default current
+
 # Finisch youtube music setup
 ./bin/.local/scripts/create-firefox-youtube-music-profile
 
