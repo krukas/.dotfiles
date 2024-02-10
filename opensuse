@@ -1,0 +1,155 @@
+#!/usr/bin/env bash
+APT_PACKAGES=(
+	# Basic
+	ca-certificates
+	sudo
+	stow
+	flatpak
+	python311-pipx
+	nodejs-common
+	# Display manager
+	greetd
+	tuigreet
+	# Desktop environment (SwayWM + application)
+	sway
+	swaybg
+	waybar
+	swaylock
+	SwayNotificationCenter
+	NetworkManager
+	fuzzel
+	pulseaudio-utils
+	playerctl
+	grim
+	slurp
+	imv
+	mpv
+	xwayland
+	xdg-desktop-portal-wlr # Screen recording
+	xdg-desktop-portal-gtk # Flatpak integrations like file laucher
+	xdg-user-dirs
+	# CLI tools
+	zsh
+	git
+	git-delta
+	wget
+	curl
+	gnupg
+	exa
+	htop
+	fzf
+	fd
+	helix
+	zellij
+	# GUI Applications
+	libgthread-2_0-0 # Needed for PyCharm
+	thunar
+	thunar-archive-plugin
+	thunar-volman
+	pavucontrol
+	alacritty
+	keepassxc
+	meld
+	gimp
+)
+
+FLATPAK_PACKAGES=(
+	org.mozilla.firefox
+	org.chromium.Chromium
+	com.sublimetext.three
+	io.dbeaver.DBeaverCommunity
+	com.slack.Slack
+)
+
+
+sudo zypper update
+sudo zypper install --no-confirm ${APT_PACKAGES[@]}
+
+
+# Flatpak
+flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install -y --user flathub ${FLATPAK_PACKAGES[@]}
+
+
+# Docker
+sudo zypper install --no-confirm docker docker-compose
+sudo systemctl enable docker
+sudo usermod -G docker -a $USER
+
+
+# Enable and configure greetd+tuigreet
+sudo mkdir /var/cache/tuigreet
+sudo chown greeter:greeter /var/cache/tuigreet
+sudo chmod 0755 /var/cache/tuigreet
+sudo tee /etc/greetd/config.toml << EOF
+[terminal]
+vt = 1
+
+[default_session]
+command = "tuigreet --time --remember --asterisks --cmd sway"
+user = "greeter"
+EOF
+sudo systemctl set-default graphical.target
+sudo systemctl enable greetd
+
+
+# Make ZSH the default
+sudo chsh -s $(which zsh) $USER
+
+
+# Install oh-my-zsh
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+
+
+# Install starship
+wget --quiet --output-document=/tmp/starship.tar.gz https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-musl.tar.gz
+sudo tar -xzof /tmp/starship.tar.gz -C /usr/local/bin
+rm /tmp/starship.tar.gz
+
+
+# Setup git config
+git config --global core.editor helix
+git config --global core.pager delta
+git config --global interactive.difffilter "delta --color-only --features=interactive"
+git config --global merge.conflictstyle diff3
+git config --global diff.colorMoved default
+git config --global delta.line-numbers true
+git config --global delta.hunk-header-style omit
+git config --global fetch.prune true
+git config --global pull.rebase true
+git config --global push.default current
+git config --global alias.lgm "log --merges --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+
+# Setup npm
+mkdir -p "${HOME}/.npm-packages"
+npm config set prefix "${HOME}/.npm-packages"
+
+
+# Setup helix
+helix --grammar fetch
+helix --grammar build
+# LSP: Pyhon
+pipx install "python-lsp-server[all]"
+# LSP: HTML, CSS, JSON, eslint
+npm install -g vscode-langservers-extracted
+# LSP: Typescript/Javascript
+npm install -g typescript-language-server typescript
+# LSP: YAML
+npm install -g yaml-language-server
+# LSP: Dockerfile
+npm install -g dockerfile-language-server-nodejs
+# LSP: Markdown
+curl -L https://github.com/artempyanykh/marksman/releases/download/2023-12-09/marksman-linux-x64 > $HOME/.local/bin/marksman
+chmod +x $HOME/.local/bin/marksman
+
+# Finisch youtube music setup
+./bin/.local/scripts/create-firefox-youtube-music-profile
+
+
+# Remove motd message
+sudo rm /usr/lib/motd.d/welcome
+
+
+# Symlink dot files
+./install

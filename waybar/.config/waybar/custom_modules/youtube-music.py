@@ -4,15 +4,21 @@ import subprocess
 import argparse
 
 
-# Because off Firefox flatpak bug its always the same:
-# https://bugzilla.mozilla.org/show_bug.cgi?id=1666084
-# You must disable hardware controls for normal firefox browser:
-# about:config -> media.hardwaremediakeys.enabled 
-INSTANCE = "firefox.instance2"
+def get_first_active_player():
+    result = subprocess.run(["playerctl", "--list-all"], capture_output=True, text=True, shell=False)
+    if result.returncode != 0:
+        return False
+    players = result.stdout.splitlines()
+    for player in players:
+        status = playerctl(player, "status").strip().lower()
+        if status == "playing":
+            # TODO: Maybe store last player
+            return player
+    return players[0] if players else False
 
 
-def playerctl(*arguments):
-    command = ["playerctl", "-p", INSTANCE] + list(arguments)
+def playerctl(player, *arguments):
+    command = ["playerctl", "-p", player] + list(arguments)
     result = subprocess.run(command, capture_output=True, text=True, shell=False)
 
     if result.returncode != 0:
@@ -26,21 +32,23 @@ if __name__ == "__main__":
     parser.add_argument('command')
     args = parser.parse_args()
 
-    if INSTANCE not in playerctl("--list-all").splitlines():
+    player = get_first_active_player()
+
+    if not player:
         exit(0)
 
     if args.command == "play":
-        playerctl("play")
+        playerctl(player, "play")
     elif args.command == "pause":
-        playerctl("pause")
+        playerctl(player, "pause")
     elif args.command == "toggle":
-        playerctl("play-pause")
+        playerctl(player, "play-pause")
     elif args.command == "waybar":
         icon = ""
-        status = playerctl("status").strip().lower()
+        status = playerctl(player, "status").strip().lower()
         if status == "playing":
             icon = ""
         elif status == "paused":
             icon = ""
 
-        print(icon, playerctl("metadata", "--format", '{{ title }} - {{artist }} ').strip())
+        print(icon, playerctl(player, "metadata", "--format", '{{ title }} - {{artist }} ').strip())

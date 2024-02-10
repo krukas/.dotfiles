@@ -4,14 +4,16 @@ STOW_FOLDERS=(
     applications
     bin
     fonts
+    fuzzel
+    helix
     mpv
+    profile
     starship
     sway
     swaylock
     swaync
     user-dirs
     waybar
-    wofi
     zsh
 )
 
@@ -24,6 +26,8 @@ mkdir -p \
   ~/Pictures \
   ~/Videos
 
+# Remove auto generated .profile
+rm ~/.profile
 
 for folder in "${STOW_FOLDERS[@]}"
 do

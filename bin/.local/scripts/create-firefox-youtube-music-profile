@@ -13,26 +13,6 @@ def create_profile(name):
     return next(FIREFOX_USER_PATH.glob(f"*.{name}"))
 
 
-# Create default profile
-profile_path = create_profile("default-release")
-with open(profile_path / "user.js", "w") as file:
-    # Disable hardware control for default firefox because of bug:
-    # https://bugzilla.mozilla.org/show_bug.cgi?id=1666084
-    file.write("""user_pref("media.hardwaremediakeys.enabled", false);""")
-
-# Set default profile, it uses intall hash:
-# https://support.mozilla.org/en-US/kb/understanding-depth-profile-installation
-config = configparser.ConfigParser()
-config.optionxform=str
-config.read(FIREFOX_USER_PATH / "profiles.ini")
-config["InstallCF146F38BCAB2D21"] = {
-    "Default": profile_path.name,
-    "Locked":  1,
-}
-with open(FIREFOX_USER_PATH / "profiles.ini", "w") as configfile:
-    config.write(configfile, space_around_delimiters=False)
-
-
 # Create youtube profile
 profile_path = create_profile("youtube-music")
 

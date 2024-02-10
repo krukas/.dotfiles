@@ -11,9 +11,6 @@ set $down j
 set $up k
 set $right l
 
-# Include system sway variables:
-include /etc/sway/config-vars.d/*
-
 
 ###############################################################################
 # Theme
@@ -197,14 +194,15 @@ bindsym $mod+r mode "resize"
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-
+# Media controls are missing on keyboard use mod+p to toggle 
+bindsym $mod+p exec ~/.config/waybar/custom_modules/youtube-music.py toggle 
 
 ###############################################################################
 # Applications/utils control
 ###############################################################################
 
 # Start launcher
-bindsym $mod+d exec wofi --show drun
+bindsym $mod+d exec fuzzel
 
 # Start a terminal
 bindsym $mod+Return exec alacritty
@@ -216,7 +214,7 @@ bindsym $mod+Shift+n exec swaync-client -t -sw
 bindsym Control+Alt+l exec swaylock
 
 # Wofi powermenu
-bindsym Control+Alt+Backspace exec ~/.local/scripts/wofi-powermenu
+bindsym Control+Alt+Backspace exec ~/.local/scripts/powermenu
 
 # Printscreen (selector)
 bindsym Print exec grim -g "$(slurp)"
@@ -239,5 +237,6 @@ exec playerctld daemon
 # Sway notification center
 exec swaync
 
+# Fix waybar and portals
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP
 
-include /etc/sway/config.d/*
