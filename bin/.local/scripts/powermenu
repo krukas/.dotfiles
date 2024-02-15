@@ -2,7 +2,7 @@
 
 entries=" Logout\n Reboot\n Shutdown"
 
-selected=$(echo -e $entries|wofi --width 250 --height 280 --dmenu --cache-file /dev/null | awk '{print tolower($2)}')
+selected=$(echo -e $entries|fuzzel --width 12 --lines 3 --dmenu | awk '{print tolower($2)}')
 
 case $selected in
   logout)

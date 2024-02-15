@@ -1,0 +1,15 @@
+theme = "catppuccin_mocha"
+
+[editor]
+auto-save = true
+undercurl = true
+
+
+[editor.lsp]
+auto-signature-help = true
+display-inlay-hints = false
+
+
+[editor.indent-guides]
+render = true
+
