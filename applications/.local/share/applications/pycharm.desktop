@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/home/maikel/opt/pycharm/bin/pycharm.sh
+Name=pycharm
+Comment=pycharm
+Icon=/home/maikel/opt/pycharm/bin/pycharm.png
