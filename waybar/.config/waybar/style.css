@@ -46,8 +46,12 @@
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
-#workspaces button.visible {
+#workspaces button.focused {
   background-color: @surface1;
+}
+
+#workspaces button.visible {
+  border-bottom: 2px solid @overlay2;
 }
 
 #workspaces button.persistent {
