@@ -131,6 +131,17 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
 
+# Move workspace to other outputs
+bindsym $mod+Control+Shift+$right move workspace to output right
+bindsym $mod+Control+Shift+$left move workspace to output left
+bindsym $mod+Control+Shift+$down move workspace to output down
+bindsym $mod+Control+Shift+$up move workspace to output up
+# Ditto, with arrow keys
+bindsym $mod+Control+Shift+Right move workspace to output right
+bindsym $mod+Control+Shift+Left move workspace to output left
+bindsym $mod+Control+Shift+Down move workspace to output down
+bindsym $mod+Control+Shift+Up move workspace to output up
+
 
 ###############################################################################
 # Layout stuff
@@ -240,3 +251,8 @@ exec swaync
 # Fix waybar and portals
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP
 
+# Auto switch displays on kabel connect/disconnect
+exec_always {
+  pkill kanshi
+  kanshi &
+}

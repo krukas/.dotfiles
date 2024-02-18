@@ -7,6 +7,7 @@ APT_PACKAGES=(
 	flatpak
 	python311-pipx
 	nodejs-common
+	patterns-devel-base-devel_basis
 	# Display manager
 	greetd
 	tuigreet
@@ -16,6 +17,8 @@ APT_PACKAGES=(
 	waybar
 	swaylock
 	SwayNotificationCenter
+	kanshi # Auto display manager
+	nwg-displays # Manual display manager
 	NetworkManager
 	fuzzel
 	pulseaudio-utils
@@ -146,6 +149,8 @@ chmod +x $HOME/.local/bin/marksman
 # Finisch youtube music setup
 ./bin/.local/scripts/create-firefox-youtube-music-profile
 
+# Make firefox default browser
+xdg-settings set default-web-browser org.mozilla.firefox.desktop
 
 # Remove motd message
 sudo rm /usr/lib/motd.d/welcome
