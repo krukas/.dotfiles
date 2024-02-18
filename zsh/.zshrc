@@ -3,7 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Disable ZSH theme
 ZSH_THEME=""
 
-plugins=(command-not-found git docker docker-compose fzf)
+plugins=(command-not-found git docker docker-compose fzf extract)
 
 source $ZSH/oh-my-zsh.sh
 
