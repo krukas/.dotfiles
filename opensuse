@@ -9,6 +9,7 @@ APT_PACKAGES=(
 	nodejs-common
 	patterns-devel-base-devel_basis
 	hack-fonts
+	google-noto-coloremoji-fonts
 	# Display manager
 	greetd
 	tuigreet
