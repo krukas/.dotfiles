@@ -8,6 +8,7 @@ APT_PACKAGES=(
 	python311-pipx
 	nodejs-common
 	patterns-devel-base-devel_basis
+	hack-fonts
 	# Display manager
 	greetd
 	tuigreet
