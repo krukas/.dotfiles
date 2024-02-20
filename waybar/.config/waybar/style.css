@@ -31,13 +31,15 @@
 
 
 * {
-  color: @text;
+  border: none;
+  border-radius: 0;
   font-family: Hack Nerd Font Mono;
   font-size: 14px;
-  border-radius: 0;
+  min-height: 0;
 }
 
 #waybar {
+  color: @text;
   background-color: shade(@base, 0.9);
   border: 2px solid alpha(@crust, 0.3);
 }
@@ -46,16 +48,21 @@
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
+#workspaces button {
+  color: @text;
+}
+#workspaces button:hover {
+  color: @base;
+}
 #workspaces button.focused {
   background-color: @surface1;
 }
-
 #workspaces button.visible {
   border-bottom: 2px solid @overlay2;
 }
-
-#workspaces button.persistent {
-  background-color: red;
+#workspaces button.urgent, #workspaces button.persistent {
+  color: @base; 
+  background-color: @red;
 }
 
 #battery {
