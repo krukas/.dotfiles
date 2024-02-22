@@ -53,8 +53,8 @@ client.background        $base
 hide_edge_borders smart
 default_border pixel 1 # Disable window titlebar
 
-# Set output and wallpaper
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# Set wallpaper
+output * bg ~/.config/sway/wallpaper.jpg fill
 
 
 ###############################################################################
@@ -230,6 +230,8 @@ bindsym Control+Alt+Backspace exec ~/.local/scripts/powermenu
 # Printscreen (selector)
 bindsym Print exec grim -g "$(slurp)"
 
+# Start 1password
+bindsym Ctrl+Alt+p exec flatpak run com.onepassword.OnePassword --quick-access
 
 ###############################################################################
 # Status Bar
