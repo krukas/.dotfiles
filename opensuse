@@ -74,7 +74,8 @@ sudo zypper install --no-confirm ${APT_PACKAGES[@]}
 # Flatpak
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install -y --user flathub ${FLATPAK_PACKAGES[@]}
-
+# Enable good sound support
+flatpak override --user --socket=pulseaudio org.mozilla.firefox
 
 # Docker
 sudo zypper install --no-confirm docker docker-compose
@@ -147,6 +148,9 @@ npm install -g dockerfile-language-server-nodejs
 # LSP: Markdown
 curl -L https://github.com/artempyanykh/marksman/releases/download/2023-12-09/marksman-linux-x64 > $HOME/.local/bin/marksman
 chmod +x $HOME/.local/bin/marksman
+
+# Install pgcli
+pipx install pgcli
 
 # Finisch youtube music setup
 ./bin/.local/scripts/create-firefox-youtube-music-profile
