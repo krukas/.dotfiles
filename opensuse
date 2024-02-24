@@ -19,6 +19,11 @@ APT_PACKAGES=(
 	waybar
 	swaylock
 	SwayNotificationCenter
+	clipman
+	wl-clipboard
+	polkit-gnome # Allow gui apps to ask root password
+	gnome-keyring # Secret store for other apps
+	seahorse # keyring manager
 	kanshi # Auto display manager
 	nwg-displays # Manual display manager
 	NetworkManager
@@ -98,6 +103,8 @@ EOF
 sudo systemctl set-default graphical.target
 sudo systemctl enable greetd
 
+# Enable gnome keyring
+systemctl enable --user gnome-keyring-daemon
 
 # Make ZSH the default
 sudo chsh -s $(which zsh) $USER

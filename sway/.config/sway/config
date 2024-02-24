@@ -231,7 +231,10 @@ bindsym Control+Alt+Backspace exec ~/.local/scripts/powermenu
 bindsym Print exec grim -g "$(slurp)"
 
 # Start 1password
-bindsym Ctrl+Alt+p exec flatpak run com.onepassword.OnePassword --quick-access
+bindsym Ctrl+Alt+p exec 1password --quick-access
+
+# Get value from clipboard history
+bindsym $mod+y exec clipman pick -t CUSTOM -T "fuzzel --dmenu"
 
 ###############################################################################
 # Status Bar
@@ -244,17 +247,25 @@ bar swaybar_command waybar
 # Start background apps
 ###############################################################################
 
+# Enable root password prompts for gui
+exec /usr/libexec/polkit-gnome-authentication-agent-1
+
+# Enable clipboard history support
+exec wl-paste -t text --watch clipman store --no-persist
+
 # playerctld (Display and control current running music/video player)
 exec playerctld daemon
 
 # Sway notification center
 exec swaync
 
-# Fix waybar and portals
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP
+# Import needed environment variables to systemd and dbus
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE
 
 # Auto switch displays on kabel connect/disconnect
 exec_always {
   pkill kanshi
   kanshi &
 }
+
