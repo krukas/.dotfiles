@@ -46,7 +46,7 @@ APT_PACKAGES=(
 	wget
 	curl
 	gnupg
-	exa
+	eza
 	htop
 	fzf
 	fd

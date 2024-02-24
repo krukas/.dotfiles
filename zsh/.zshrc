@@ -17,6 +17,7 @@ export FZF_DEFAULT_OPTS=" \
 
 # Custom aliases
 alias hx=helix
+alias ls='eza --icons --group-directories-first -a'
 
 # Aliases for running node versions with docker
 function run_docker_node {

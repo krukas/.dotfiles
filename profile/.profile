@@ -24,3 +24,6 @@ export EDITOR=/usr/bin/helix
 NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$PATH:$NPM_PACKAGES/bin"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules"
+
+# Eza disable user/group color
+export EZA_COLORS="uu=0:gu=0"
