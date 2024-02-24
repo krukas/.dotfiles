@@ -101,6 +101,18 @@ vt = 1
 command = "tuigreet --time --remember --asterisks --cmd sway"
 user = "greeter"
 EOF
+# Fix log spam on screen: https://github.com/apognu/tuigreet/issues/68
+sudo mkdir -p /etc/systemd/system/greetd.service.d/
+sudo tee /etc/systemd/system/greetd.service.d/no_spam.conf << EOF
+[Service]
+Type=idle
+StandardInput=tty
+StandardOutput=tty
+StandardError=journal
+TTYReset=true
+TTYVHangup=true
+TTYVTDisallocate=true
+EOF
 sudo systemctl set-default graphical.target
 sudo systemctl enable greetd
 
