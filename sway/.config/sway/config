@@ -236,6 +236,9 @@ bindsym Ctrl+Alt+p exec 1password --quick-access
 # Get value from clipboard history
 bindsym $mod+y exec clipman pick -t CUSTOM -T "fuzzel --dmenu"
 
+# Open project launcher
+bindsym $mod+o exec ~/.local/scripts/open-project
+
 ###############################################################################
 # Status Bar
 ###############################################################################

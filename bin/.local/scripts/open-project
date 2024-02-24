@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+selected=$(find ~/Projects -maxdepth 1 -mindepth 1  -type d -exec basename {} \;|fuzzel --width 30 --lines 10 --dmenu)
+
+if [ "$selected" = "" ]; then
+  exit
+fi
+
+#alacritty -e zsh -c "cd ~/Projects/$selected && helix . && zsh"
+
+~/opt/pycharm/bin/pycharm.sh ~/Projects/$selected
