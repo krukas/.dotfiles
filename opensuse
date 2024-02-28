@@ -67,6 +67,7 @@ APT_PACKAGES=(
 FLATPAK_PACKAGES=(
 	org.mozilla.firefox
 	org.chromium.Chromium
+	org.libreoffice.LibreOffice
 	com.sublimetext.three
 	io.dbeaver.DBeaverCommunity
 	com.slack.Slack
