@@ -1,6 +1,7 @@
 theme = "catppuccin_mocha"
 
 [editor]
+line-number = "relative"
 auto-save = true
 undercurl = true
 
