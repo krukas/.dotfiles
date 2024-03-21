@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+npm update -g
+pipx upgrade-all
+flatpak update -y --user
+sudo zypper dup
