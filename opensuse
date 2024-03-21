@@ -166,6 +166,8 @@ npm install -g typescript-language-server typescript
 npm install -g yaml-language-server
 # LSP: Dockerfile
 npm install -g dockerfile-language-server-nodejs
+# LSP: docker-compose
+npm install -g @microsoft/compose-language-service
 # LSP: Markdown
 curl -L https://github.com/artempyanykh/marksman/releases/download/2023-12-09/marksman-linux-x64 > $HOME/.local/bin/marksman
 chmod +x $HOME/.local/bin/marksman
