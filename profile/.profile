@@ -19,6 +19,8 @@ export XDG_SESSION_DESKTOP=sway
 # Default editor
 export EDITOR=/usr/bin/helix
 
+# Cargo
+export PATH="$PATH:$HOME/.cargo/bin/"
 
 # NPM
 NPM_PACKAGES="${HOME}/.npm-packages"

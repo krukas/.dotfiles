@@ -42,6 +42,7 @@ APT_PACKAGES=(
 	# CLI tools
 	zsh
 	git
+	rustup
 	git-delta
 	wget
 	curl
@@ -148,6 +149,9 @@ git config --global pull.rebase true
 git config --global push.default current
 git config --global alias.lgm "log --merges --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
+# Setup rust
+rustup default stable
+rustup component add rust-analyzer
 
 # Setup npm
 mkdir -p "${HOME}/.npm-packages"
