@@ -76,19 +76,19 @@ FLATPAK_PACKAGES=(
 
 
 sudo zypper update
-sudo zypper install --no-confirm ${APT_PACKAGES[@]}
+sudo zypper install --no-confirm "${APT_PACKAGES[@]}"
 
 
 # Flatpak
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install -y --user flathub ${FLATPAK_PACKAGES[@]}
+flatpak install -y --user flathub "${FLATPAK_PACKAGES[@]}"
 # Enable good sound support
-flatpak override --user --socket=pulseaudio org.mozilla.firefox
+flatpak override --user --socket=pulseaudio -- org.mozilla.firefox
 
 # Docker
 sudo zypper install --no-confirm docker docker-compose
 sudo systemctl enable docker
-sudo usermod -G docker -a $USER
+sudo usermod -G docker -a "$USER"
 
 
 # Enable and configure greetd+tuigreet
@@ -122,7 +122,7 @@ sudo systemctl enable greetd
 systemctl enable --user gnome-keyring-daemon
 
 # Make ZSH the default
-sudo chsh -s $(which zsh) $USER
+sudo chsh -s "$(which zsh)" "$USER"
 
 
 # Install oh-my-zsh
@@ -172,8 +172,8 @@ npm install -g @microsoft/compose-language-service
 # LSP: Bash
 npm i -g bash-language-server
 # LSP: Markdown
-curl -L https://github.com/artempyanykh/marksman/releases/download/2023-12-09/marksman-linux-x64 > $HOME/.local/bin/marksman
-chmod +x $HOME/.local/bin/marksman
+curl -L https://github.com/artempyanykh/marksman/releases/download/2023-12-09/marksman-linux-x64 > "$HOME/.local/bin/marksman"
+chmod +x "$HOME/.local/bin/marksman"
 
 # Install pgcli
 pipx install pgcli
