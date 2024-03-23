@@ -5,6 +5,8 @@ line-number = "relative"
 auto-save = true
 undercurl = true
 
+[editor.file-picker]
+hidden = false
 
 [editor.lsp]
 auto-signature-help = true
