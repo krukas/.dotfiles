@@ -145,6 +145,7 @@ git config --global merge.conflictstyle diff3
 git config --global diff.colorMoved default
 git config --global delta.line-numbers true
 git config --global delta.hunk-header-style omit
+git config --global delta.dark true
 git config --global fetch.prune true
 git config --global pull.rebase true
 git config --global push.default current
