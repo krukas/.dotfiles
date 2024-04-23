@@ -165,6 +165,8 @@ helix --grammar fetch
 helix --grammar build
 # LSP: Pyhon
 pipx install "python-lsp-server[all]"
+pipx inject python-lsp-server python-lsp-black
+pipx inject python-lsp-server python-lsp-isort
 # LSP: HTML, CSS, JSON, eslint
 npm install -g vscode-langservers-extracted
 # LSP: Typescript/Javascript
