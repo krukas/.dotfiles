@@ -237,7 +237,7 @@ bindsym Ctrl+Alt+p exec 1password --quick-access
 bindsym $mod+y exec clipman pick -t CUSTOM -T "fuzzel --dmenu"
 
 # Open project launcher
-bindsym $mod+o exec ~/.local/scripts/open-project
+bindsym $mod+o exec ~/.local/scripts/hx-open
 
 ###############################################################################
 # Status Bar

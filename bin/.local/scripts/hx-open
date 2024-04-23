@@ -1,0 +1,110 @@
+#!/usr/bin/env python3
+
+import os
+import subprocess
+import sys
+import time
+from enum import Enum
+from pathlib import Path
+
+ZELLIJ_SESSION = "helix"
+PROJECTS_DIR = Path("~/Projects").expanduser()
+
+
+class ZellijAction(Enum):
+    query_tab_names = "query-tab-names"
+
+
+def run_zellij_action(action, *args) -> (bool, str):
+    try:
+        return True, subprocess.check_output(
+            " ".join(
+                [
+                    "zellij",
+                    f"--session={ZELLIJ_SESSION}",
+                    "action",
+                    action,
+                    *map(str, args),
+                ]
+            ),
+            shell=True,
+            timeout=1,
+        ).decode("utf-8")
+    except subprocess.CalledProcessError:
+        return False, ""
+
+
+def is_zellij_session_active():
+    try:
+        sessions = subprocess.check_output(
+            "zellij list-sessions --no-formatting", shell=True
+        ).decode("utf-8")
+        for line in sessions.splitlines():
+            if line.startswith(f"{ZELLIJ_SESSION} "):
+                print(line, "EXITED" not in line)
+                return "EXITED" not in line
+    except subprocess.CalledProcessError:
+        return False
+    return False
+
+
+def get_projects():
+    return sorted([p for p in os.listdir(PROJECTS_DIR) if not p.startswith(".")])
+
+
+def get_project_selection():
+    with subprocess.Popen(
+        ["fuzzel", "--dmenu", "--width=30", "--lines=10"],
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    ) as fuzzel:
+        selection = fuzzel.communicate(input="\n".join(get_projects()).encode("utf-8"))[
+            0
+        ]
+        if fuzzel.returncode != 0:
+            sys.exit(1)
+        return selection.decode().strip()
+
+
+# Move to workspace 2
+os.system("swaymsg workspace 2")
+
+seleted_project = get_project_selection()
+
+if not is_zellij_session_active():
+    # TODO: kill and delete sessions to start fresh one
+    os.spawnvp(
+        os.P_NOWAIT,
+        "alacritty",
+        [
+            "alacritty",
+            "--working-directory",
+            f"{PROJECTS_DIR}/{seleted_project}",
+            "--hold",
+            "--command",
+            "zellij",
+            "attach",
+            "--create",
+            ZELLIJ_SESSION,
+        ],
+    )
+    # TODO remove/rename new tab
+    time.sleep(1)
+
+success, tabs = run_zellij_action("query-tab-names")
+if not success:
+    sys.exit(1)
+print(seleted_project)
+if seleted_project in tabs.splitlines():
+    run_zellij_action("go-to-tab-name", seleted_project)
+else:
+    run_zellij_action(
+        "new-tab",
+        f"--name={seleted_project}",
+        f"--cwd={PROJECTS_DIR}/{seleted_project}",
+        "--layout=default",
+    )
+    run_zellij_action("go-to-tab-name", seleted_project)
+    run_zellij_action("write-chars", '"helix ."')
+    run_zellij_action("write", 13)
