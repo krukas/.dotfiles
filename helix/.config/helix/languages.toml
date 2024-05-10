@@ -1,6 +1,9 @@
 [language-server.pylsp.config.pylsp.plugins]
 jedi = {environment = "env"}
 flake8 = {enabled = true, maxLineLength = 88}
+# Disable rope_autimport, make startup slow and invalid import path for env variable 
+#rope_autoimport = {enabled = true, memory=true}
+rope_autoimport = {enabled = false}
 autopep8 = {enabled = false}
 mccabe = {enabled = false}
 pycodestyle = {enabled = false}
