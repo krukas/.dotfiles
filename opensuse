@@ -169,6 +169,8 @@ pipx inject python-lsp-server python-lsp-black
 pipx inject python-lsp-server python-lsp-isort
 # LSP: HTML, CSS, JSON, eslint
 npm install -g vscode-langservers-extracted
+# LSP: Django template
+pipx install django-template-lsp
 # LSP: Typescript/Javascript
 npm install -g typescript-language-server typescript
 # LSP: YAML

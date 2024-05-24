@@ -1,3 +1,7 @@
+[language-server.djlsp]
+command = "djlsp"
+
+
 [language-server.pylsp.config.pylsp.plugins]
 jedi = {environment = "env"}
 flake8 = {enabled = true, maxLineLength = 88}
@@ -19,7 +23,7 @@ injection-regex = "htmldjango"
 roots = []
 file-types = [ "html" ]
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "vscode-html-language-server" ]
+language-servers = [ "vscode-html-language-server", "djlsp" ]
 
 [[grammar]]
 name = "htmldjango"
