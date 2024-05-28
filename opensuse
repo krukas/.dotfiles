@@ -55,6 +55,7 @@ APT_PACKAGES=(
 	helix
 	ShellCheck
 	zellij
+	shfmt # Used by bash LSP for formatting
 	# GUI Applications
 	libgthread-2_0-0 # Needed for PyCharm
 	thunar
