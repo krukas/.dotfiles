@@ -84,18 +84,20 @@ if not is_zellij_session_active():
             "--hold",
             "--command",
             "zellij",
+            "--layout=helix",
             "attach",
             "--create",
             ZELLIJ_SESSION,
         ],
     )
-    # TODO remove/rename new tab
     time.sleep(1)
+    run_zellij_action("write-chars", '"helix ."')
+    run_zellij_action("write", 13)
 
 success, tabs = run_zellij_action("query-tab-names")
 if not success:
     sys.exit(1)
-print(seleted_project)
+
 if seleted_project in tabs.splitlines():
     run_zellij_action("go-to-tab-name", seleted_project)
 else:
@@ -103,7 +105,7 @@ else:
         "new-tab",
         f"--name={seleted_project}",
         f"--cwd={PROJECTS_DIR}/{seleted_project}",
-        "--layout=default",
+        "--layout=helix",
     )
     run_zellij_action("go-to-tab-name", seleted_project)
     run_zellij_action("write-chars", '"helix ."')
