@@ -139,6 +139,7 @@ rm /tmp/starship.tar.gz
 
 
 # Setup git config
+git config --global init.defaultBranch main
 git config --global core.editor helix
 git config --global core.pager delta
 git config --global interactive.difffilter "delta --color-only --features=interactive"
