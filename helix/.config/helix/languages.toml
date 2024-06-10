@@ -1,6 +1,9 @@
 [language-server.djlsp]
 command = "djlsp"
 
+[language-server.sql-language-server]
+command = "sql-language-server"
+args = ["up", "--method", "stdio"]
 
 [language-server.pylsp.config.pylsp.plugins]
 jedi = {environment = "env"}
@@ -28,3 +31,8 @@ language-servers = [ "vscode-html-language-server", "djlsp" ]
 [[grammar]]
 name = "htmldjango"
 source = { git = "https://github.com/interdependence/tree-sitter-htmldjango" , rev = "ea71012d3fe14dd0b69f36be4f96bdfe9155ebae" }
+
+[[language]]
+name = "sql"
+language-servers = ["sql-language-server"]
+formatter = { command = "sqlfluff", args = ["format", "--dialect", "postgres", "-"] }
