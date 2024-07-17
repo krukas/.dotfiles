@@ -21,7 +21,7 @@ alias ls='eza --icons --group-directories-first -a'
 
 # Aliases for running node versions with docker
 function run_docker_node {
-  docker container run --rm -it -v $(pwd):/app --workdir /app --user 1000:1000 node:$1-buster-slim ${@:2}
+  docker container run --rm -it -v $(pwd):/app --workdir /app --user 1000:1000 node:$1-bookworm-slim ${@:2}
 }
 function n14 {
   run_docker_node 14 $@
@@ -34,6 +34,9 @@ function n18 {
 }
 function n20 {
   run_docker_node 20 $@
+}
+function n22 {
+  run_docker_node 22 $@
 }
 
 # Projects shortcuts
