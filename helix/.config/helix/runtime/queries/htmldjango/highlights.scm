@@ -9,18 +9,18 @@
   "{%"
   "%}"
   (end_paired_statement)
-] @tag
+] @punctuation.bracket
 
 [
  (tag_name) 
 ] @function
 
 (variable_name) @variable
-(filter_name) @method
-(filter_argument) @parameter
+(filter_name) @function
+(filter_argument) @variable.parameter
 (keyword) @keyword
 (operator) @operator
 (keyword_operator) @keyword.operator
-(number) @number
-(boolean) @boolean
+(number) @constant.numeric
+(boolean) @constant.builtin.boolean
 (string) @string

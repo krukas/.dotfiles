@@ -26,7 +26,15 @@ injection-regex = "htmldjango"
 roots = []
 file-types = [ "html" ]
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "vscode-html-language-server", "djlsp" ]
+language-servers = [ "djlsp", "vscode-html-language-server" ]
+
+[language.auto-pairs]
+'"' = '"'
+'(' = ')'
+'[' = ']'
+'{' = '}'
+'%' = '%'
+'<' = '>'
 
 [[grammar]]
 name = "htmldjango"
