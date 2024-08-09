@@ -56,6 +56,7 @@ APT_PACKAGES=(
 	ShellCheck
 	zellij
 	shfmt # Used by bash LSP for formatting
+	calc
 	# GUI Applications
 	libgthread-2_0-0 # Needed for PyCharm
 	thunar
