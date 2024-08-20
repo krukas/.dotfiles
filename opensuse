@@ -57,6 +57,9 @@ APT_PACKAGES=(
 	zellij
 	shfmt # Used by bash LSP for formatting
 	calc
+	yazi
+	shafa
+	bat
 	# GUI Applications
 	libgthread-2_0-0 # Needed for PyCharm
 	thunar

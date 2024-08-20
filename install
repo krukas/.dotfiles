@@ -2,6 +2,7 @@
 STOW_FOLDERS=(
     alacritty
     applications
+    bat
     bin
     fonts
     fuzzel
@@ -14,6 +15,7 @@ STOW_FOLDERS=(
     swaync
     user-dirs
     waybar
+    yazi
     zellij
     zsh
 )

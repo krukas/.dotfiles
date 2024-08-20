@@ -18,7 +18,20 @@ export FZF_DEFAULT_OPTS=" \
 # Custom aliases
 alias hx=helix
 alias ls='eza --icons --group-directories-first -a'
+alias cat='bat --paging=never'
 alias c=calc
+
+# Yazi use auto detect for images, force yazi to use chafa
+alias yazi='DISPLAY="" WAYLAND_DISPLAY="" XDG_SESSION_TYPE="" yazi'
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # Aliases for running node versions with docker
 function run_docker_node {
