@@ -6,27 +6,27 @@ command = "sql-language-server"
 args = ["up", "--method", "stdio"]
 
 [language-server.pylsp.config.pylsp.plugins]
-jedi = {environment = "env"}
-flake8 = {enabled = true, maxLineLength = 88}
+jedi = { environment = "env" }
+flake8 = { enabled = true, maxLineLength = 88 }
 # Disable rope_autimport, make startup slow and invalid import path for env variable 
 #rope_autoimport = {enabled = true, memory=true}
-rope_autoimport = {enabled = false}
-autopep8 = {enabled = false}
-mccabe = {enabled = false}
-pycodestyle = {enabled = false}
-pyflakes = {enabled = false}
-pylint = {enabled = false}
-yapf = {enabled = false}
-ruff = { enabled = false}
+rope_autoimport = { enabled = false }
+autopep8 = { enabled = false }
+mccabe = { enabled = false }
+pycodestyle = { enabled = false }
+pyflakes = { enabled = false }
+pylint = { enabled = false }
+yapf = { enabled = false }
+ruff = { enabled = false }
 
 [[language]]
 name = "htmldjango"
 scope = "source.htmldjango"
 injection-regex = "htmldjango"
 roots = []
-file-types = [ "html" ]
+file-types = ["html"]
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "djlsp", "vscode-html-language-server" ]
+language-servers = ["djlsp", "vscode-html-language-server"]
 formatter = { command = "djlint", args = [
   "--reformat",
   "--profile=django",
@@ -47,9 +47,14 @@ formatter = { command = "djlint", args = [
 
 [[grammar]]
 name = "htmldjango"
-source = { git = "https://github.com/interdependence/tree-sitter-htmldjango" , rev = "ea71012d3fe14dd0b69f36be4f96bdfe9155ebae" }
+source = { git = "https://github.com/interdependence/tree-sitter-htmldjango", rev = "ea71012d3fe14dd0b69f36be4f96bdfe9155ebae" }
 
 [[language]]
 name = "sql"
 language-servers = ["sql-language-server"]
-formatter = { command = "sqlfluff", args = ["format", "--dialect", "postgres", "-"] }
+formatter = { command = "sqlfluff", args = [
+  "format",
+  "--dialect",
+  "postgres",
+  "-",
+] }
