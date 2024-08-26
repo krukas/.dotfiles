@@ -177,6 +177,8 @@ pipx inject python-lsp-server python-lsp-isort
 npm install -g vscode-langservers-extracted
 # LSP: Django template
 pipx install django-template-lsp
+# Formattter: Django template
+pipx install djlint
 # LSP: Typescript/Javascript
 npm install -g typescript-language-server typescript
 # LSP: YAML

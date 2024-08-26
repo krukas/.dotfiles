@@ -27,6 +27,15 @@ roots = []
 file-types = [ "html" ]
 indent = { tab-width = 2, unit = "  " }
 language-servers = [ "djlsp", "vscode-html-language-server" ]
+formatter = { command = "djlint", args = [
+  "--reformat",
+  "--profile=django",
+  "--indent=2",
+  "--blank-line-after-tag=load,extends,include,endblock",
+  "--format-css",
+  "--format-js",
+  "-",
+] }
 
 [language.auto-pairs]
 '"' = '"'
