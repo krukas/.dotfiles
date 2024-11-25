@@ -144,6 +144,7 @@ rm /tmp/starship.tar.gz
 
 # Setup git config
 git config --global init.defaultBranch main
+git config --global core.excludesFile '~/.git-global-ignore'
 git config --global core.editor helix
 git config --global core.pager delta
 git config --global interactive.difffilter "delta --color-only --features=interactive"
@@ -160,6 +161,7 @@ git config --global alias.lgm "log --merges --pretty=format:'%Cred%h%Creset -%C(
 # Setup rust
 rustup default stable
 rustup component add rust-analyzer
+cargo install cargo-update
 
 # Setup npm
 mkdir -p "${HOME}/.npm-packages"
@@ -179,6 +181,8 @@ npm install -g vscode-langservers-extracted
 pipx install django-template-lsp
 # Formattter: Django template
 pipx install djlint
+# LSP: htmx
+cargo install htmx-lsp
 # LSP: Typescript/Javascript
 npm install -g typescript-language-server typescript
 # LSP: YAML
@@ -197,6 +201,9 @@ chmod +x "$HOME/.local/bin/marksman"
 # SQL: LSP/Formatter
 npm install -g sql-language-server
 pipx install sqlfluff
+
+# Install aider
+pipx install aider-chat
 
 # Install pgcli
 pipx install pgcli

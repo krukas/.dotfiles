@@ -16,7 +16,6 @@ export FZF_DEFAULT_OPTS=" \
 --pointer ▶"
 
 # Custom aliases
-alias hx=helix
 alias ls='eza --icons --group-directories-first -a'
 alias cat='bat --paging=never'
 alias c=calc
@@ -86,6 +85,10 @@ zellij_tab_name_update() {
 }
 zellij_tab_name_update
 chpwd_functions+=(zellij_tab_name_update)
+
+if [ -f ~/.zshrc.private ]; then
+    source ~/.zshrc.private
+fi
 
 
 eval "$(starship init zsh)"

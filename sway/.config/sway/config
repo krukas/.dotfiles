@@ -102,6 +102,11 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 
+input Touchpad {
+    accel_profile "adaptive"
+	pointer_accel 1
+}
+
 ###############################################################################
 # Workspaces
 ###############################################################################
@@ -206,7 +211,7 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 # Media controls are missing on keyboard use mod+p to toggle 
-bindsym $mod+p exec ~/.config/waybar/custom_modules/youtube-music.py toggle 
+# bindsym $mod+p exec ~/.config/waybar/custom_modules/youtube-music.py toggle 
 
 ###############################################################################
 # Applications/utils control
@@ -225,10 +230,10 @@ bindsym $mod+Shift+n exec swaync-client -t -sw
 bindsym Control+Alt+l exec swaylock
 
 # Wofi powermenu
-bindsym Control+Alt+Backspace exec ~/.local/scripts/powermenu
+bindsym Control+Alt+d exec ~/.local/scripts/powermenu
 
 # Printscreen (selector)
-bindsym Print exec grim -g "$(slurp)"
+bindsym $mod+p exec grim -g "$(slurp)"
 
 # Start 1password
 bindsym Ctrl+Alt+p exec 1password --quick-access

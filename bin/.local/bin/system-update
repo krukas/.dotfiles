@@ -2,5 +2,6 @@
 
 npm update -g
 pipx upgrade-all
+cargo install-update --all
 flatpak update -y --user
 sudo zypper dup
