@@ -9,6 +9,7 @@ auto-format = false
 undercurl = true
 completion-timeout = 5
 completion-trigger-len = 1
+end-of-line-diagnostics = "hint"
 
 [editor.file-picker]
 hidden = false
@@ -20,6 +21,9 @@ display-inlay-hints = false
 
 [editor.indent-guides]
 render = true
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
 
 [keys.normal."space"]
 u = ":reset-diff-change"
