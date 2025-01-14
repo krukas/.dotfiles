@@ -12,7 +12,7 @@ Personal dotfiles for SwayWM desktop
 
 ### Auto unlock keyring on login
 
-Add the following lines to `/etc/pam.d/greetd`:
+Add the following lines to `/usr/lib/pam.d/greetd`:
 
 ```
 # Under last auth line:
