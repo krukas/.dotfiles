@@ -18,12 +18,8 @@ hidden = false
 auto-signature-help = false
 display-inlay-hints = false
 
-
 [editor.indent-guides]
 render = true
-
-[editor.inline-diagnostics]
-cursor-line = "warning"
 
 [keys.normal."space"]
 u = ":reset-diff-change"
