@@ -5,7 +5,7 @@ Personal dotfiles for SwayWM desktop
 ## Install for Opensuse Tumbleweed
 
 ```bash
-./opensuse
+./install
 ```
 
 ## Manual steps to complete setup

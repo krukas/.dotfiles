@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+STOW_FOLDERS=(
+    aider
+    alacritty
+    applications
+    bat
+    bin
+    fonts
+    fuzzel
+    git
+    helix
+    mpv
+    profile
+    starship
+    sway
+    swaylock
+    swaync
+    user-dirs
+    waybar
+    yazi
+    zellij
+    zsh
+)
+
+
+mkdir -p \
+  ~/.config \
+  ~/Documents \
+  ~/Downloads \
+  ~/Music \
+  ~/Pictures \
+  ~/Videos
+
+# Remove auto generated .profile
+rm ~/.profile
+
+for folder in "${STOW_FOLDERS[@]}"
+do
+  echo "stow $folder"
+  stow --no-folding $folder
+done
