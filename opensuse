@@ -61,7 +61,9 @@ APT_PACKAGES=(
 	shafa
 	bat
 	# GUI Applications
-	libgthread-2_0-0 # Needed for PyCharm
+	MozillaFirefox
+	chromium
+	libreoffice
 	thunar
 	thunar-archive-plugin
 	thunar-volman
@@ -73,9 +75,6 @@ APT_PACKAGES=(
 )
 
 FLATPAK_PACKAGES=(
-	org.mozilla.firefox
-	org.chromium.Chromium
-	org.libreoffice.LibreOffice
 	com.sublimetext.three
 	io.dbeaver.DBeaverCommunity
 	com.slack.Slack
@@ -89,8 +88,6 @@ sudo zypper install --no-confirm "${APT_PACKAGES[@]}"
 # Flatpak
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install -y --user flathub "${FLATPAK_PACKAGES[@]}"
-# Enable good sound support
-flatpak override --user --socket=pulseaudio -- org.mozilla.firefox
 
 # Docker
 sudo zypper install --no-confirm docker docker-compose
