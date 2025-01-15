@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+
+# Exit on error
+set -e
+# Print the command
+set -x
+
 APT_PACKAGES=(
 	# Basic
 	ca-certificates
