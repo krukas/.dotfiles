@@ -27,10 +27,9 @@ APT_PACKAGES=(
 	gnome-keyring # Secret store for other apps
 	seahorse # keyring manager
 	kanshi # Auto display manager
-	nwg-displays # Manual display manager
+	pipewire # Audio
 	NetworkManager
 	fuzzel
-	pulseaudio-utils
 	playerctl
 	grim
 	slurp
