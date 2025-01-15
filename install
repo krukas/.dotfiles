@@ -57,7 +57,7 @@ APT_PACKAGES=(
 	shfmt # Used by bash LSP for formatting
 	calc
 	yazi
-	shafa
+	chafa
 	bat
 	# GUI Applications
 	MozillaFirefox
