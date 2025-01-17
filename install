@@ -47,6 +47,7 @@ APT_PACKAGES=(
 	xdg-user-dirs
 	# CLI tools
 	zsh
+	starship
 	git
 	rustup
 	git-delta
@@ -136,12 +137,6 @@ sudo chsh -s "$(which zsh)" "$USER"
 
 # Install oh-my-zsh
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
-
-
-# Install starship
-wget --quiet --output-document=/tmp/starship.tar.gz https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-musl.tar.gz
-sudo tar -xzof /tmp/starship.tar.gz -C /usr/local/bin
-rm /tmp/starship.tar.gz
 
 
 # Setup git config
