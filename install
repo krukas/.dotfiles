@@ -63,7 +63,6 @@ APT_PACKAGES=(
 	zellij
 	shfmt # Used by bash LSP for formatting
 	calc
-	yazi
 	chafa
 	bat
 	# GUI Applications
@@ -204,6 +203,9 @@ pipx install aider-chat
 
 # Install pgcli
 pipx install pgcli
+
+# Install yazi
+cargo install --locked yazi-fm yazi-cli
 
 # Finisch youtube music setup
 ./bin/.local/scripts/create-firefox-youtube-music-profile
