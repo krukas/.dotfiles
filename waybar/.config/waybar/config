@@ -10,8 +10,10 @@
         "sway/workspaces",
         "sway/mode",
     ],
-    "modules-right":[
+    "modules-center": [
         "custom/youtube-music",
+    ],
+    "modules-right":[
         "pulseaudio",
         "network",
         "cpu",
@@ -42,8 +44,8 @@
     "pulseaudio":{
         "format":"{volume}% <span size='xx-large' rise='-3500'>{icon}</span> {format_source}",
         "format-muted": " {format_source}",
-        "format-source":"{volume}% ",
-        "format-source-muted":"",
+        "format-source":"{volume}% 󰍬",
+        "format-source-muted":"󰍭",
         "format-icons":{
             "headphone":"",
             "hands-free":"",
@@ -60,7 +62,7 @@
         "on-click":"pavucontrol"
     },
     "network":{
-        "format-wifi":"{essid} ({signalStrength}%) ",
+        "format-wifi":"{essid} ({signalStrength}%) 󰖩",
         "format-ethernet":"{ipaddr}/{cidr} ",
         "tooltip-format":"{ifname} via {gwaddr} ",
         "format-linked":"{ifname} (No IP) ",
