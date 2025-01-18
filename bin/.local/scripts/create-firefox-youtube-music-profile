@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 import os
-import configparser
 from pathlib import PosixPath
 
-FIREFOX_USER_PATH = PosixPath(
-    "~/.var/app/org.mozilla.firefox/.mozilla/firefox/"
-).expanduser()
+FIREFOX_USER_PATH = PosixPath("~/.mozilla/firefox/").expanduser()
 
 
 def create_profile(name):
-    os.system(f"flatpak run org.mozilla.firefox -CreateProfile {name}")
+    os.system(f"firefox -CreateProfile {name}")
     return next(FIREFOX_USER_PATH.glob(f"*.{name}"))
 
 

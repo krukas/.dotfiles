@@ -211,7 +211,7 @@ cargo install --locked yazi-fm yazi-cli
 ./bin/.local/scripts/create-firefox-youtube-music-profile
 
 # Make firefox default browser
-xdg-settings set default-web-browser org.mozilla.firefox.desktop
+xdg-settings set default-web-browser firefox.desktop
 
 # Remove motd message
 sudo rm /usr/lib/motd.d/welcome
