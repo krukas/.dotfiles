@@ -23,6 +23,15 @@ session    optional     pam_gnome_keyring.so auto_start
 
 More info: https://wiki.archlinux.org/title/GNOME/Keyring
 
+### Enable ssh agent for gnome keyring
+
+```
+mkdir -vp ~/.config/systemd/user/
+cp /usr/lib/systemd/user/gnome-keyring-daemon.service ~/.config/systemd/user/
+```
+
+Edit `~/.config/systemd/user/gnome-keyring-daemon.service` and add `ssh` to `--components`.
+
 ### Auto display (kanshi)
 
 Create a config file `~/.config/kanshi/config`, and use `swaymsg -t get_outputs` to get output names:

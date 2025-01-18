@@ -15,6 +15,8 @@ _JAVA_AWT_WM_NONREPARENTING=1
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
 
+# Enable ssh agent
+export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 
 # Default editor
 export EDITOR=/usr/bin/helix
