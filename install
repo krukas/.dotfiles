@@ -192,7 +192,7 @@ npm i -g bash-language-server
 # LSP: toml
 cargo install taplo-cli --locked --features lsp
 # LSP: Markdown
-curl -L https://github.com/artempyanykh/marksman/releases/download/2023-12-09/marksman-linux-x64 > "$HOME/.local/bin/marksman"
+curl -L https://github.com/artempyanykh/marksman/releases/download/2024-12-18/marksman-linux-x64 > "$HOME/.local/bin/marksman"
 chmod +x "$HOME/.local/bin/marksman"
 # SQL: LSP/Formatter
 npm install -g sql-language-server
