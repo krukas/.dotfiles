@@ -35,6 +35,8 @@ ZYPPER_PACKAGES=(
 	kanshi # Auto display manager
 	pipewire # Audio
 	NetworkManager
+	bluez
+	bluetuith
 	fuzzel
 	playerctl
 	grim
