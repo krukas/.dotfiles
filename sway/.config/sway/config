@@ -104,7 +104,7 @@ bindsym $mod+Shift+Right move right
 
 input Touchpad {
     accel_profile "adaptive"
-	pointer_accel 1
+    pointer_accel 1
 }
 
 ###############################################################################
@@ -271,9 +271,17 @@ exec swaync
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE
 
+# Set Gnome theme
+exec_always {
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+    gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
+    gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+}
+
 # Auto switch displays on kabel connect/disconnect
 exec_always {
-  pkill kanshi
-  kanshi &
+    pkill kanshi
+    kanshi &
 }
 
