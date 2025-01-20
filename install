@@ -147,8 +147,10 @@ git config --global core.pager delta
 git config --global interactive.difffilter "delta --color-only --features=interactive"
 git config --global merge.conflictstyle diff3
 git config --global diff.colorMoved default
+git config --global include.path ~/.catppuccin.gitconfig
 git config --global delta.line-numbers true
 git config --global delta.hunk-header-style omit
+git config --global delta.features catppuccin-mocha
 git config --global delta.dark true
 git config --global fetch.prune true
 git config --global pull.rebase true
@@ -220,3 +222,6 @@ sudo rm /usr/lib/motd.d/welcome
 
 # Symlink dot files
 ./create_symlinks
+
+# Build bat themes
+bat cache --build
