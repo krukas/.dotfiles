@@ -2,6 +2,8 @@
 
 Personal dotfiles for SwayWM desktop
 
+![Screenshot](/assets/screenshot.png)
+
 ## Install for Opensuse Tumbleweed
 
 ```bash
