@@ -6,6 +6,10 @@ Personal dotfiles for [SwayWM](https://swaywm.org/) on [openSUSE Tumbleweed](htt
 
 ## Install
 
+Install OpenSUSE Tumbleweed and select the `Server` option during the installation
+wizard. After the installation is complete, log in to the server, install `git`,
+clone this repository, and run the following command:
+
 ```bash
 ./install
 ```
