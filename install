@@ -82,7 +82,6 @@ ZYPPER_PACKAGES=(
 )
 
 FLATPAK_PACKAGES=(
-	com.sublimetext.three
 	io.dbeaver.DBeaverCommunity
 	com.slack.Slack
 )
