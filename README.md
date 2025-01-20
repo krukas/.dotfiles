@@ -1,10 +1,10 @@
 # Dotfiles
 
-Personal dotfiles for SwayWM desktop
+Personal dotfiles for [SwayWM](https://swaywm.org/) on [openSUSE Tumbleweed](https://get.opensuse.org/tumbleweed/) with the [Catppuccin Mocha](https://github.com/catppuccin/catppuccin) theme.
 
 ![Screenshot](/assets/screenshot.png)
 
-## Install for Opensuse Tumbleweed
+## Install
 
 ```bash
 ./install
