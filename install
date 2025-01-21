@@ -210,6 +210,13 @@ pipx install pgcli
 # Install yazi
 cargo install --locked yazi-fm yazi-cli
 
+# Install ollama
+mkdir ~/opt/ollama
+tar -C ~/opt/ollama -xzf ollama-linux-amd64.tgz
+rm ollama-linux-amd64.tgz
+mkdir -p ~/.local/bin
+ln -s ~/opt/ollama/bin/ollama ~/.local/bin/ollama
+
 # Finisch youtube music setup
 ./bin/.local/scripts/create-firefox-youtube-music-profile
 
@@ -225,3 +232,7 @@ sudo rm /usr/lib/motd.d/welcome
 
 # Build bat themes
 bat cache --build
+
+# Enable ollama
+systemctl --user daemon-reload
+systemctl --user enable ollama

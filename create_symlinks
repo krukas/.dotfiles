@@ -10,6 +10,7 @@ STOW_FOLDERS=(
     git
     helix
     mpv
+    ollama
     profile
     starship
     sway
