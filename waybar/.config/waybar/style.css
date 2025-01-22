@@ -51,9 +51,6 @@
 #workspaces button {
   color: @text;
 }
-#workspaces button:hover {
-  color: @base;
-}
 #workspaces button.focused {
   background-color: @surface1;
 }
