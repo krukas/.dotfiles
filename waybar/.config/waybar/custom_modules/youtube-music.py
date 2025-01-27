@@ -51,4 +51,4 @@ if __name__ == "__main__":
         elif status == "paused":
             icon = ""
 
-        print(icon, playerctl(player, "metadata", "--format", '{{ title }} - {{artist }} ').strip())
+        print(icon, playerctl(player, "metadata", "--format", '{{ trunc(title, 32) }} - {{ trunc(artist, 16) }} ').strip(), " ")
