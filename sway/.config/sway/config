@@ -213,6 +213,9 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 # Media controls are missing on keyboard use mod+p to toggle 
 # bindsym $mod+p exec ~/.config/waybar/custom_modules/youtube-music.py toggle 
 
+bindsym XF86MonBrightnessDown exec brightnessctl -q set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl -q set +5%
+
 ###############################################################################
 # Applications/utils control
 ###############################################################################

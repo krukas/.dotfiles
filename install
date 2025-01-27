@@ -28,6 +28,7 @@ ZYPPER_PACKAGES=(
 	SwayNotificationCenter
 	clipman
 	wl-clipboard
+	brightnessctl
 	polkit-gnome # Allow gui apps to ask root password
 	xhost # Allow xwayland gui apps to use root password
 	gnome-keyring # Secret store for other apps
