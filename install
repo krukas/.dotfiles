@@ -68,6 +68,8 @@ ZYPPER_PACKAGES=(
 	calc
 	chafa
 	bat
+	xh
+	jq
 	# GUI Applications
 	MozillaFirefox
 	chromium
@@ -207,6 +209,9 @@ pipx install aider-chat
 
 # Install pgcli
 pipx install pgcli
+
+# Install posting
+pipx install posting
 
 # Install yazi
 cargo install --locked yazi-fm yazi-cli
