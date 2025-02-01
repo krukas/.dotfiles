@@ -1,11 +1,17 @@
 # Model
-model: o3-mini
-reasoning-effort: medium
+model: o1-mini
+# Enable when avaible
+#model: o3-mini
+#reasoning-effort: medium
 architect: true
 
 # Git
 auto-commits: false
 gitignore: false
+
+# Lint
+lint: false
+auto-lint: false
 
 # Theme
 dark-mode: true
