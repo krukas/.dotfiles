@@ -1,0 +1,16 @@
+# Model
+model: o3-mini
+reasoning-effort: medium
+architect: true
+
+# Git
+auto-commits: false
+gitignore: false
+
+# Theme
+dark-mode: true
+# Fix autocomplete menu not readable
+completion-menu-color: "#cdd6f4"
+completion-menu-bg-color: "#1e1e2e"
+completion-menu-current-color: "#45475a"
+completion-menu-current-bg-color: "#f9e2af"
