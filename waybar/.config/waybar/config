@@ -39,7 +39,8 @@
     "custom/youtube-music":{
         "interval":5,
         "exec":"$HOME/.config/waybar/custom_modules/youtube-music.py waybar",
-        "on-click":"$HOME/.config/waybar/custom_modules/youtube-music.py toggle"
+        "on-click":"$HOME/.config/waybar/custom_modules/youtube-music.py toggle",
+        "tooltip": false
     },
     "pulseaudio":{
         "format":"{volume}% <span size='xx-large' rise='-3500'>{icon}</span> {format_source}",
