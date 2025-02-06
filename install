@@ -203,6 +203,8 @@ chmod +x "$HOME/.local/bin/marksman"
 # SQL: LSP/Formatter
 npm install -g sql-language-server
 pipx install sqlfluff
+# Harper-ls (spelling)
+cargo install harper-ls --locked
 
 # Install aider
 pipx install aider-chat
