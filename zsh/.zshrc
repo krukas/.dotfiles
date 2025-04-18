@@ -19,6 +19,7 @@ export FZF_DEFAULT_OPTS=" \
 alias ls='eza --icons --group-directories-first -a'
 alias cat='bat --paging=never'
 alias c=calc
+alias mc=minio-client
 
 # Yazi use auto detect for images, force yazi to use chafa
 alias yazi='DISPLAY="" WAYLAND_DISPLAY="" XDG_SESSION_TYPE="" yazi'
