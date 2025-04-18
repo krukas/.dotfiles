@@ -1,8 +1,12 @@
-# Model
-model: o1-mini
-# Enable when avaible
-#model: o3-mini
-#reasoning-effort: medium
+# Gemini
+model: gemini/gemini-2.5-pro-preview-03-25
+
+# openai
+# model: o4-mini
+# editor-model: gpt-4.1
+# reasoning-effort: medium
+# editor-edit-format: patch
+
 architect: true
 
 # Git
