@@ -175,6 +175,8 @@ bindsym $mod+space focus mode_toggle
 # Move focus to the parent container
 bindsym $mod+a focus parent
 
+for_window [app_id="it.mijorus.smile"] floating enable
+
 
 ###############################################################################
 # Resizing containers:

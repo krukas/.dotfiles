@@ -87,6 +87,7 @@ ZYPPER_PACKAGES=(
 FLATPAK_PACKAGES=(
 	io.dbeaver.DBeaverCommunity
 	com.slack.Slack
+	it.mijorus.smile
 )
 
 
