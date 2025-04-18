@@ -8,7 +8,7 @@ args = ["up", "--method", "stdio"]
 [language-server.harper-ls]
 command = "harper-ls"
 args = ["--stdio"]
-config = { harper-ls = { diagnosticSeverity = "warning", linters = { long_sentences = false } } }
+config = { harper-ls = { diagnosticSeverity = "warning", linters = { LongSentences = false } } }
 
 [language-server.pylsp.config.pylsp.plugins]
 jedi = { environment = "env" }
