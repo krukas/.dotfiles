@@ -70,6 +70,9 @@ source = { git = "https://github.com/interdependence/tree-sitter-htmldjango", re
 name = "markdown"
 language-servers = ["marksman", "harper-ls"]
 
+[[language]]
+name = "git-commit"
+language-servers = ["harper-ls"]
 
 [[language]]
 name = "sql"
