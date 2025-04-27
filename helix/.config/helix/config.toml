@@ -22,6 +22,7 @@ display-inlay-hints = false
 render = true
 
 [keys.normal."space"]
+l = ":reload-all"
 u = ":reset-diff-change"
 n = ":sh ~/.config/helix/open-yazi-picker.sh"
 o = ":toggle inline-diagnostics.other-lines hint disable"
