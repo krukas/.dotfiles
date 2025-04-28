@@ -61,6 +61,7 @@ ZYPPER_PACKAGES=(
 	htop
 	fzf
 	fd
+	ripgrep
 	helix
 	ShellCheck
 	zellij
