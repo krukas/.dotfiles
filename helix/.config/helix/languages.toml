@@ -1,6 +1,9 @@
 [language-server.djlsp]
 command = "djlsp"
 
+[language-server.djlsp.config]
+env_directories = ["env-docker", "env", "venv"]
+
 [language-server.sql-language-server]
 command = "sql-language-server"
 args = ["up", "--method", "stdio"]
