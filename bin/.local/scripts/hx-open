@@ -91,7 +91,7 @@ if not is_zellij_session_active():
         ],
     )
     time.sleep(1)
-    run_zellij_action("write-chars", '"helix ."')
+    run_zellij_action("write-chars", '"helix . && exit"')
     run_zellij_action("write", 13)
 
 success, tabs = run_zellij_action("query-tab-names")
@@ -108,5 +108,5 @@ else:
         "--layout=helix",
     )
     run_zellij_action("go-to-tab-name", seleted_project)
-    run_zellij_action("write-chars", '"helix ."')
+    run_zellij_action("write-chars", '"helix . && exit"')
     run_zellij_action("write", 13)
