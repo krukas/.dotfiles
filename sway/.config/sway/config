@@ -56,6 +56,8 @@ default_border pixel 1 # Disable window titlebar
 # Set wallpaper
 output * bg ~/.config/sway/wallpaper.jpg fill
 
+# Set Cursor theme
+seat seat0 xcursor_theme Adwaita 20
 
 ###############################################################################
 # Basics
